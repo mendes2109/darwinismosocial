@@ -1,0 +1,65 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+}
+
+header{
+  height: 100vh;
+  background: url(../image/evolucao-do-homem-em-alusao-ao-darwinismo-social.webp) no-repeat black;
+  margin-bottom: 50px;
+}
+
+h1{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: #e6e6e6;
+  font-size: 4em;
+}
+
+main{
+  margin: auto;
+}
+h2 {
+  text-align: center;
+  color: #333;
+}
+img {
+  display: block;
+  margin: 20px auto;
+  max-width: 600px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+.http-section {
+  margin-top: 40px;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+button {
+  margin: 5px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  background: #333;
+  color: white;
+  cursor: pointer;
+}
+button:hover {
+  background: #555;
+}
+pre {
+  background: #eee;
+  padding: 10px;
+  border-radius: 5px;
+  max-height: 200px;
+  overflow-y: auto;
+}

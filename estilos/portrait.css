@@ -1,0 +1,29 @@
+@charset "UTF-8";
+/* Telas em modo retrato (portrait) */
+
+header {
+  height: 50vh;
+  background-size: cover;
+  background-position: center;
+}
+
+h1 {
+  font-size: 2em;
+  text-align: center;
+  position: static; /* tira o absolute para não quebrar em telas pequenas */
+  padding-top: 20px;
+}
+
+main {
+  margin: 10px;
+  font-size: 1em;
+}
+
+img {
+  max-width: 90%; /* ocupa quase toda a largura */
+}
+
+button {
+  width: 100%;
+  margin: 10px 0;
+}

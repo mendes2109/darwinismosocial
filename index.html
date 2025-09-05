@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="estilos/style.css" media="all">
+  <link rel="stylesheet" href="estilos/landscape.css" media="screen and (orientation:landscape)">
+  <link rel="stylesheet" href="estilos/portrait.css" media="screen and (orientation:portrait)">
+  <title>Darwinismo Social</title>
+</head>
+<body>
+  <header>
+      <h1>Darwinismo Social</h1>
+  </header>
+
+  <main>
+      <h2>O que é?</h2>
+      <p>
+        O Darwinismo Social é uma teoria que aplica ideias da seleção natural, de Charles Darwin,
+        para justificar desigualdades sociais, raciais e econômicas. Surgiu no século XIX e foi
+        usado por alguns pensadores para defender que apenas os “mais fortes” ou “mais aptos”
+        sobreviveriam na sociedade.
+      </p>
+      <h2>Histórico</h2>
+      <p>
+        Essa ideia foi usada como justificativa para práticas de exclusão social, racismo,
+        imperialismo e até políticas de eugenia. Hoje, o Darwinismo Social é criticado e considerado
+        pseudociência, já que distorce os conceitos originais de Darwin.
+      </p>
+  </main>
+
+  <!-- Imagem 1 -->
+  <img src="image/evolucao-do-homem-em-alusao-ao-darwinismo-social.webp" alt="Charles Darwin">
+
+  <!-- Imagem 2 -->
+  <img src="https://imgs.search.brave.com/kSniK11UVBpK1WTCbAC4SMs0ofJDD9iVf4k6d4t0utc/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/cG9saXRpemUuY29t/LmJyL3dwLWNvbnRl/bnQvdXBsb2Fkcy8y/MDI1LzA0LzE3NDIx/MzQ3NTM4MDI4MjA3/LTEwMjR4NTEyLndl/YnA" alt="Charge representando o Darwinismo Social">
+
+  <!-- Métodos HTTP -->
+  <div class="http-section">
+    <h2>Exemplo dos Métodos HTTP</h2>
+    <p>
+      Abaixo temos exemplos práticos dos métodos HTTP aplicados em JavaScript. 
+      Aqui usamos uma API de teste (<a href="https://jsonplaceholder.typicode.com" target="_blank">JSONPlaceholder</a>).
+    </p>
+
+    <button onclick="getImage()">GET</button>
+    <button onclick="postImage()">POST</button>
+    <button onclick="putImage()">PUT</button>
+    <button onclick="patchImage()">PATCH</button>
+    <button onclick="deleteImage()">DELETE</button>
+
+    <h3>Saída:</h3>
+    <pre id="output">Clique em um botão para ver a resposta...</pre>
+  </div>
+
+  <script>
+    const output = document.getElementById("output");
+
+    function showResult(method, data) {
+      output.textContent = method + ":\n" + JSON.stringify(data, null, 2);
+    }
+
+    function getImage() {
+      fetch("https://jsonplaceholder.typicode.com/photos/1")
+        .then(res => res.json())
+        .then(data => showResult("GET", data));
+    }
+
+    function postImage() {
+      fetch("https://jsonplaceholder.typicode.com/photos", {
+        method: "POST",
+        body: JSON.stringify({
+          title: "Nova Imagem",
+          url: "https://via.placeholder.com/600"
+        }),
+        headers: { "Content-type": "application/json; charset=UTF-8" }
+      })
+      .then(res => res.json())
+      .then(data => showResult("POST", data));
+    }
+
+    function putImage() {
+      fetch("https://jsonplaceholder.typicode.com/photos/1", {
+        method: "PUT",
+        body: JSON.stringify({
+          id: 1,
+          title: "Imagem Atualizada",
+          url: "https://via.placeholder.com/600/92c952"
+        }),
+        headers: { "Content-type": "application/json; charset=UTF-8" }
+      })
+      .then(res => res.json())
+      .then(data => showResult("PUT", data));
+    }
+
+    function patchImage() {
+      fetch("https://jsonplaceholder.typicode.com/photos/1", {
+        method: "PATCH",
+        body: JSON.stringify({
+          title: "Título alterado parcialmente"
+        }),
+        headers: { "Content-type": "application/json; charset=UTF-8" }
+      })
+      .then(res => res.json())
+      .then(data => showResult("PATCH", data));
+    }
+
+    function deleteImage() {
+      fetch("https://jsonplaceholder.typicode.com/photos/1", {
+        method: "DELETE"
+      })
+      .then(() => showResult("DELETE", { message: "Imagem excluída com sucesso (fake)" }));
+    }
+  </script>
+</body>
+</html>

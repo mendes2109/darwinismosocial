@@ -1,0 +1,25 @@
+@charset "UTF-8";
+
+/* Telas em modo paisagem (landscape) */
+
+header {
+  height: 70vh;
+  background-size: contain; 
+  background-position: center;
+}
+
+h1 {
+  font-size: 3em;
+  left: 10%;
+  top: 40%;
+  position: absolute;
+}
+
+main {
+  margin: 30px auto;
+  max-width: 900px;
+}
+
+img {
+  max-width: 70%;
+}
